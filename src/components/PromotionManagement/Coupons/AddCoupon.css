@@ -1,0 +1,188 @@
+/* ====== Body ====== */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f6fa;   /* halka background color */
+  font-family: 'Poppins', sans-serif;
+  padding-top: 70px;     /* Navbar ke liye space */
+}
+
+/* ====== Navbar ====== */
+.navbar {
+  position: fixed;       /* hamesha top pe dikhai de */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;          /* navbar height */
+  background-color: #3b50d0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+/* Navbar brand/logo */
+.navbar .brand {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Navbar links */
+.navbar .nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar .nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ====== Form ka main container ====== */
+.form-container {
+  max-width: 700px;       /* form ki maximum width */
+  margin: 30px auto;      /* navbar ke niche gap + center */
+  padding: 25px 30px;     /* andar ka spacing */
+  background: #fff;       /* safed background */
+  border-radius: 12px;    /* corner gol kar diye */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* halka shadow effect */
+  box-sizing: border-box; /* padding + border ko width me include kare */
+}
+
+/* ====== Form ka title (heading) ====== */
+.form-title {
+  font-size: 24px;        /* title ka size */
+  font-weight: 600;       /* mota (bold) */
+  margin-bottom: 25px;    /* neeche gap */
+  color: #333;            /* grey color */
+  text-align: center;     /* beech me (center) */
+}
+
+/* ====== Pure form ka layout ====== */
+.coupon-form {
+  display: flex;
+  flex-direction: column; /* vertical stack (upar se neeche) */
+  gap: 20px;              /* har field ke beech gap */
+  width: 100%;            /* pura width le */
+}
+
+/* ====== Ek row me multiple fields ====== */
+.form-row {
+  display: flex;          /* ek line me (side by side) */
+  gap: 15px;              /* fields ke beech gap */
+  width: 100%;
+}
+
+/* Row ke andar ke sare elements equal width le */
+.form-row > * {
+  flex: 1;
+}
+
+/* ====== Input aur Select box styling ====== */
+.coupon-form input,
+.coupon-form select {
+  padding: 12px 15px;     /* andar space */
+  border: 1px solid #ddd; /* halka grey border */
+  border-radius: 8px;     /* corner gol */
+  font-size: 14px;        /* text ka size */
+  background: #fafafa;    /* halka grey background */
+  color: #333;            /* text ka color */
+  transition: all 0.2s ease; /* smooth hover/focus effect */
+  width: 100%;            /* pura width le */
+  box-sizing: border-box; /* padding+border width me count ho */
+}
+
+/* ====== Placeholder ka color ====== */
+.coupon-form input::placeholder,
+.coupon-form select::placeholder {
+  color: #888;
+}  
+
+/* ====== Jab input focus me ho (click kiya ho) ====== */
+.coupon-form input:focus,
+.coupon-form select:focus {
+  border-color: #3b50d0;  /* border blue ho jaye */
+  background: #fff;       /* background safed ho jaye */
+  color: #222;            /* text thoda ghera ho */
+  box-shadow: 0 0 6px rgba(59, 80, 208, 0.25); /* blue halka shadow */
+  outline: none;          /* default border outline hat jaye */
+}
+
+/* ====== Radio button group ====== */
+.radio-group {
+  display: flex;          /* ek line me aaye */
+  flex-wrap: wrap;        /* chhote screen pe neeche chale jaye */
+  gap: 20px;              /* options ke beech gap */
+  font-size: 14px;        /* text size */
+  color: #444;            /* text color */
+}
+
+/* Radio button aur uske text ke beech thoda gap */
+.radio-group input {
+  margin-right: 6px;
+}
+
+/* ====== Form ke andar buttons ====== */
+.form-actions {
+  display: flex;              /* buttons ek line me */
+  justify-content: flex-end;  /* right side me align */
+  gap: 15px;                  /* beech ka gap */
+  margin-top: 25px;           /* upar se gap */
+}
+
+/* ====== Common button styling ====== */
+.reset-btn,
+.submit-btn {
+  padding: 10px 22px;     /* andar ka spacing */
+  border-radius: 8px;     /* corner gol */
+  font-weight: 600;       /* mota text */
+  cursor: pointer;        /* mouse pointer dikhe */
+  border: none;           /* default border hat jaye */
+  transition: all 0.2s;   /* hover effect smooth */
+}
+
+/* ====== Reset button ====== */
+.reset-btn {
+  background: #f0f0f0;    /* grey background */
+  color: #444;            /* text color grey */
+}
+
+/* Reset button hover effect */
+.reset-btn:hover {
+  background: #ddd;       /* thoda ghera grey */
+}
+
+/* ====== Submit button ====== */
+.submit-btn {
+  background: #3b50d0;    /* blue background */
+  color: #fff;            /* white text */
+}
+
+/* Submit button hover effect */
+.submit-btn:hover {
+  background: #2d3ead;    /* ghera blue */
+}
+
+/* ====== Responsive Design (mobile ke liye) ====== */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;   /* chhoti screen pe ek ke neeche ek */
+  }
+
+  .form-container {
+    padding: 20px;            /* padding thoda kam */
+    margin: 20px 10px;        /* mobile me margin adjust */
+  }
+
+  .navbar .nav-links {
+    gap: 10px;                /* mobile me link gap kam */
+  }
+}

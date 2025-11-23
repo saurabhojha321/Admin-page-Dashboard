@@ -1,0 +1,439 @@
+/* Global Reset and Body Styling for the Dashboard Context */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Modern font */
+    background-color: #f4f7f9; /* डैशबोर्ड का हल्का बैकग्राउंड */
+    color: #333;
+}
+
+/* Main Container for the Category Setup component */
+.category-setup {
+    width: 150%; /* पूरे पेज पर फैला हुआ */
+    max-width: 1400px; /* बहुत बड़े स्क्रीन पर भी नियंत्रित */
+    margin: 20px auto; /* सेंटर में और ऊपर/नीचे मार्जिन */
+    padding: 30px;
+    background-color: #ffffff; /* सफेद कार्ड बैकग्राउंड */
+    border-radius: 12px; /* सॉफ्ट राउंडेड कॉर्नर */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* प्रीमियम शैडो */
+    transition: all 0.3s ease; /* स्मूथ ट्रांजीशन */
+}
+
+/* Title Styling */
+.setup-title {
+    color: #2c3e50; /* गहरा नीला-ग्रे */
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef; /* हल्की बॉटम लाइन */
+}
+
+/* --- Top Tabs Styling (Language Tabs) --- */
+.tabs {
+    display: flex;
+    gap: 10px; /* टैब बटनों के बीच गैप */
+    margin-bottom: 30px;
+    background-color: #e9ecef; /* टैब सेक्शन का बैकग्राउंड */
+    border-radius: 8px;
+    padding: 8px;
+    width: fit-content; /* केवल बटनों के साइज़ का */
+}
+
+.tabs button {
+    background: none;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6c757d; /* ग्रे टेक्स्ट */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-transform: capitalize; /* पहला अक्षर बड़ा */
+}
+
+.tabs button.active {
+    background-color: #007bff; /* एक्टिव टैब के लिए नीला बैकग्राउंड */
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2); /* हल्का शैडो */
+}
+
+.tabs button:hover:not(.active) {
+    background-color: #e2e6ea;
+    color: #343a40;
+}
+
+/* --- Form Box Section --- */
+.form-box {
+    display: flex;
+    flex-wrap: wrap; /* रिस्पॉन्सिव के लिए */
+    gap: 30px; /* सेक्शन के बीच गैप */
+    background-color: #f8f9fa; /* फॉर्म के लिए हल्का ग्रे बैकग्राउंड */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05); /* इनसेट शैडो */
+    margin-bottom: 30px;
+}
+
+.form-left {
+    flex: 2; /* इनपुट फील्ड्स को ज़्यादा जगह */
+    min-width: 300px; /* छोटे स्क्रीन पर */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* इनपुट्स के बीच गैप */
+}
+
+.form-right {
+    flex: 1; /* अपलोड सेक्शन को कम जगह */
+    min-width: 250px; /* छोटे स्क्रीन पर */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start; /* बाईं ओर अलाइन करें */
+}
+
+.form-box input[type="text"],
+.form-box select {
+    padding: 12px 15px;
+    border: 1px solid #ced4da; /* सॉफ्ट बॉर्डर */
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #ffffff; /* सफेद इनपुट बैकग्राउंड */
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box; /* padding and border included in width */
+}
+
+.form-box input[type="text"]::placeholder {
+    color: #adb5bd; /* प्लेसहोल्डर का रंग */
+}
+
+.form-box input[type="text"]:focus,
+.form-box select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.upload-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.upload-box {
+    display: flex;
+    flex-direction: column; /* टेक्स्ट को सेंटर में लाने के लिए */
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* पूरी उपलब्ध चौड़ाई लें */
+    height: 120px;
+    border: 2px dashed #aeb8c3;
+    border-radius: 8px;
+    color: #aeb8c3;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center; /* टेक्स्ट को सेंटर करें */
+    background-color: #ffffff; /* अपलोड बॉक्स का बैकग्राउंड */
+}
+
+.upload-box:hover {
+    border-color: #007bff;
+    color: #007bff;
+    background-color: #e9f5ff;
+}
+
+/* --- Form Actions/Buttons --- */
+.form-actions {
+    display: flex;
+    justify-content: flex-end; /* दाईं ओर अलाइन करें */
+    gap: 15px;
+    margin-bottom: 40px;
+    padding-top: 10px; /* फॉर्म बॉक्स के बाद थोड़ी जगह */
+}
+
+.reset-btn,
+.submit-btn,
+.search-box button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.reset-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.reset-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+.submit-btn {
+    background-color: #28a745; /* ग्रीन */
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+/* --- Category Table Section --- */
+.category-table {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* हल्का शैडो */
+}
+
+/* Table Filters */
+.table-filters {
+    display: flex;
+    flex-wrap: wrap; /* रिस्पॉन्सिव के लिए */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+    gap: 15px; /* फिल्टर के बीच गैप */
+}
+
+.small-tabs {
+    display: flex;
+    gap: 5px;
+    background-color: #e9ecef;
+    border-radius: 6px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.small-tabs button {
+    background: none;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6c757d;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.small-tabs button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.small-tabs button:hover:not(.active) {
+    background-color: #e2e6ea;
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%; /* छोटे स्क्रीन पर */
+    max-width: 350px; /* बड़े स्क्रीन पर नियंत्रित */
+}
+
+.search-box input[type="text"] {
+    border: none;
+    padding: 10px 15px;
+    flex: 1;
+    min-width: 100px;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.search-box input[type="text"]::placeholder {
+    color: #adb5bd;
+}
+
+.search-box button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 0;
+    font-weight: 600;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+    margin-top: 15px; /* टेबल के ऊपर थोड़ी जगह */
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+thead th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+
+tbody tr:hover {
+    background-color: #fdfdfe; /* हल्का हाइलाइट */
+}
+
+/* Table Action Buttons */
+.edit-btn,
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem; /* आइकॉन का साइज़ बढ़ाएँ */
+    margin: 0 8px;
+    padding: 8px; /* क्लिकेबल एरिया बढ़ाएँ */
+    border-radius: 50%; /* गोल बटन */
+    transition: all 0.3s ease;
+}
+
+.edit-btn { color: #ffc107; }
+.delete-btn { color: #dc3545; }
+
+.edit-btn:hover { background-color: #ffc107; color: white; transform: scale(1.1); }
+.delete-btn:hover { background-color: #dc3545; color: white; transform: scale(1.1); }
+
+/* Total Categories Text */
+.total {
+    margin-top: 25px;
+    font-weight: 600;
+    color: #495057;
+    text-align: right;
+    font-size: 1rem;
+    padding-top: 15px;
+    border-top: 1px solid #e9ecef;
+}
+
+/* --- Toggle Switch Styling (More prominent) --- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 25px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3.5px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2); /* शैडो */
+}
+
+input:checked + .slider {
+  background-color: #28a745;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .category-setup {
+        padding: 20px;
+        margin: 15px auto;
+        width: 98%;
+    }
+
+    .setup-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .form-box {
+        flex-direction: column; /* छोटे स्क्रीन पर कॉलम में दिखें */
+        gap: 20px;
+    }
+
+    .form-left, .form-right {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .table-filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .search-box {
+        max-width: 100%; /* सर्च बॉक्स पूरी चौड़ाई ले */
+    }
+
+    .form-actions {
+        justify-content: center; /* बटन सेंटर में दिखें */
+    }
+
+    .tabs {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabs button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    .form-box input[type="text"],
+    .form-box select,
+    .reset-btn, .submit-btn,
+    .search-box input, .search-box button,
+    th, td {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+    .setup-title {
+        font-size: 1.5rem;
+    }
+}

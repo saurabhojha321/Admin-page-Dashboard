@@ -1,0 +1,268 @@
+/* --------------------------
+   1) THEME VARIABLES
+   -------------------------- */
+:root {
+  --primary: #3b49df;
+  --primary-dark: #2d3cad;
+  --danger: #ff4d4f;
+  --bg: #f5f7fb;
+  --text: #1a1a1a;
+  --muted: #888;
+  --table-bg: #fff;
+  --border: #e5e7eb;
+}
+
+/* --------------------------
+   Global styles
+   -------------------------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  margin: 0;
+  color: var(--text);
+}
+
+/* --------------------------
+   MAIN CONTAINER
+   -------------------------- */
+.discounts-container {
+  position: fixed;      /* ✅ Fixed topbar ke niche */
+  top: 70px;            /* ✅ Topbar ki height */
+  left: 250px;          /* ✅ Sidebar ke baad start hoga */
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 20px;
+  background: var(--bg);
+  box-sizing: border-box;
+  transition: left 0.3s ease; /* ✅ smooth sidebar toggle ke liye */
+}
+
+/* jab sidebar collapse ho to adjust ho */
+.sidebar.collapsed ~ .main-content .discounts-container {
+  left: 80px; /* ✅ collapsed sidebar ke baad space */
+}
+
+/* --------------------------
+   Heading style
+   -------------------------- */
+h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+/* --------------------------
+   Tabs
+   -------------------------- */
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.tab {
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: var(--muted);
+}
+
+.tab:hover {
+  color: var(--primary-dark);
+}
+
+.tab.active {
+  border-bottom: 3px solid var(--primary);
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+/* --------------------------
+   Search + Download Row
+   -------------------------- */
+.search-download {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  padding: 8px 12px;
+  min-width: 220px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59,73,223,0.1);
+}
+
+.search-button,
+.download-button {
+  padding: 8px 16px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.search-button:hover,
+.download-button:hover {
+  background: var(--primary-dark);
+}
+
+.download {
+  margin-left: auto;
+}
+
+/* --------------------------
+   Table
+   -------------------------- */
+.discounts-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--table-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.discounts-table th {
+  padding: 14px;
+  text-align: left;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.discounts-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.discounts-table tr:hover td {
+  background: #f9fafc;
+}
+
+/* --------------------------
+   Action Buttons
+   -------------------------- */
+.edit-btn,
+.delete-btn {
+  padding: 5px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.edit-btn {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+.edit-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+.delete-btn:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* --------------------------
+   Footer Total
+   -------------------------- */
+.total-discount {
+  margin-top: 15px;
+  text-align: right;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* --------------------------
+   Custom Toggle Switch
+   -------------------------- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 22px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* --------------------------
+   Responsive
+   -------------------------- */
+@media (max-width: 768px) {
+  .discounts-container {
+    left: 0; /* ✅ mobile me sidebar hide */
+    padding: 15px;
+  }
+  .search-download {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .download {
+    margin-left: 0;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+}

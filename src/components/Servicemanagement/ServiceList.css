@@ -1,0 +1,368 @@
+/* ==================================================================== */
+/* ServiceList.css - FINAL OPTIMIZED AND RESPONSIVE STYLING (V2) */
+/* ==================================================================== */
+
+/* --- Color Palette & Variables --- */
+:root {
+	--primary-indigo: #4a5cf4; /* Main Action Color (Vibrant Blue) */
+	--primary-dark: #3a4ad9; /* Darker Blue for Hover */
+	--light-indigo: #eef2ff; /* Very Light background for tabs/hovers */
+	--dark-grey: #1f2937; /* Nearly black text */
+	--medium-grey: #6b7280; /* Subtext/Borders */
+	--light-grey-bg: #f9fafb; /* Soft background */
+	--border-light: #e5e7eb; /* Subtle borders */
+	--white: #ffffff;
+	--success-green: #10b981;
+}
+
+/* --- Basic Reset and Global Styles --- */
+body {
+	background-color: var(--light-grey-bg);
+	margin: 0;
+	padding: 0;
+	font-family: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+.service-container {
+	background: var(--white);
+	padding: 30px; 
+	/* FIXED: Changed from 165% to a fluid width with margin */
+	width: calc(100% - 40px); /* Max 100% width with 20px margin on each side */
+	max-width: 1200px;
+	margin: 40px auto; 
+	border-radius: 16px; 
+	/* PREMIUM SHADOW: Deeper, softer shadow for a floating effect */
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.05); 
+	font-family: 'Inter', sans-serif; 
+	overflow-x: hidden; 
+}
+
+/* ================== Header Section (शीर्षक, बटन और काउंट) ================== */
+.service-header {
+	display: flex;
+	justify-content: space-between; 
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 15px 25px; 
+	border-bottom: 1px solid var(--border-light);
+	padding-bottom: 20px;
+	margin-bottom: 25px;
+}
+
+.service-header h2 {
+	font-size: 32px; /* Slightly larger heading */
+	font-weight: 800; /* Bolder */
+	color: var(--dark-grey);
+	margin: 0;
+	flex-shrink: 0; 
+}
+
+.total-services {
+	font-size: 16px;
+	color: var(--medium-grey);
+	font-weight: 600;
+	margin-left: auto; 
+	flex-shrink: 0; 
+	padding: 8px 12px;
+	background-color: var(--light-grey-bg);
+	border-radius: 6px;
+}
+
+.add-service-btn {
+	background: var(--primary-indigo);
+	color: var(--white);
+	border: none;
+	padding: 12px 24px; 
+	border-radius: 10px; /* More rounded */
+	cursor: pointer;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	gap: 8px; 
+	font-weight: 700;
+	text-transform: none; /* Less aggressive case */
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+	flex-shrink: 0; 
+	box-shadow: 0 6px 15px rgba(74, 92, 244, 0.3);
+}
+
+.add-service-btn:hover {
+	background: var(--primary-dark);
+	transform: translateY(-3px); /* Stronger lift on hover */
+	box-shadow: 0 10px 20px rgba(74, 92, 244, 0.4);
+}
+
+/* ================== Tabs Section ================== */
+
+.service-tabs {
+	margin-top: 15px;
+	display: flex;
+	/* Use overflow-x for horizontal scrolling on small tabs list */
+	overflow-x: auto; 
+	padding-bottom: 5px; /* Space for shadow/scroll indicator */
+	gap: 35px; /* Wider gap for clarity */
+	border-bottom: 1px solid var(--border-light);
+	margin-bottom: 20px;
+}
+
+/* Hide scrollbar for aesthetics, but keep functionality */
+.service-tabs::-webkit-scrollbar {
+	display: none;
+}
+.service-tabs {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.tab-item {
+	padding: 12px 0; /* More vertical padding */
+	font-size: 15px;
+	color: var(--medium-grey);
+	font-weight: 600;
+	cursor: pointer;
+	border-bottom: 3px solid transparent;
+	transition: border-bottom 0.3s, color 0.3s;
+	user-select: none; /* Prevent text selection */
+	flex-shrink: 0; /* Important for horizontal scrolling */
+}
+
+.tab-item:hover:not(.active) {
+	color: var(--dark-grey);
+}
+
+.tab-item.active {
+	color: var(--primary-indigo);
+	border-bottom-color: var(--primary-indigo);
+	font-weight: 700;
+}
+
+/* ================== Search Section ================== */
+.search-section {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	margin: 20px 0;
+}
+
+.search-input-wrapper {
+	position: relative;
+	flex-grow: 1;
+}
+
+.search-section input {
+	width: 100%;
+	padding: 12px 15px; 
+	border: 2px solid var(--border-light); 
+	border-radius: 10px;
+	font-size: 15px;
+	color: var(--dark-grey);
+	transition: all 0.2s;
+	background-color: var(--light-grey-bg);
+}
+
+.search-section input:focus {
+	outline: none;
+	border-color: var(--primary-indigo);
+	box-shadow: 0 0 0 4px rgba(74, 92, 244, 0.2); 
+	background-color: var(--white);
+}
+
+.search-btn {
+	background: var(--dark-grey);
+	color: var(--white);
+	border: none;
+	padding: 12px 30px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 600;
+	flex-shrink: 0;
+	transition: background 0.2s, transform 0.1s;
+}
+
+.search-btn:hover {
+	background: #4C5F72;
+}
+
+
+/* ================== TABLE STYLING AND HORIZONTAL SCROLL FIX ================== */
+
+.service-table-wrapper {
+	/* 💥 FIX: ensures scrollbar appears when table overflows container 💥 */
+	overflow-x: auto; 
+	margin-top: 20px;
+	border: 1px solid var(--border-light);
+	border-radius: 12px; /* Nicely rounded table container */
+}
+
+.service-table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 900px; /* Ensures table columns don't collapse too much on tablets */
+}
+
+.service-table thead {
+	background-color: var(--light-grey-bg);
+}
+
+.service-table th {
+	padding: 15px 15px; 
+	font-size: 13px;
+	font-weight: 700;
+	border-bottom: 2px solid var(--border-light);
+	text-transform: uppercase;
+	color: var(--medium-grey);
+	text-align: left;
+	letter-spacing: 0.5px;
+}
+
+.service-table td {
+	padding: 15px 15px;
+	font-size: 14px;
+	color: var(--dark-grey);
+	white-space: nowrap; 
+	border-bottom: 1px solid var(--border-light);
+}
+
+/* ZEBRA STRIPING FOR READABILITY */
+.service-table tbody tr:nth-child(even) {
+	background-color: var(--light-indigo); /* Use very light indigo for stripe */
+}
+.service-table tbody tr:nth-child(odd) {
+	background-color: var(--white);
+}
+
+.service-table tbody tr:hover {
+	background-color: rgba(74, 92, 244, 0.05); /* Subtle blue highlight on hover */
+}
+
+/* Action Buttons (Edit/Delete) */
+.action-buttons {
+	display: flex;
+	gap: 15px; 
+}
+
+.action-buttons button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 18px; 
+	color: var(--medium-grey);
+	transition: color 0.2s, transform 0.1s;
+	padding: 0;
+}
+
+.action-buttons button:hover {
+	color: var(--primary-indigo);
+	transform: scale(1.1);
+}
+
+/* Status Badges (Example classes) */
+.status-active, .status-pending {
+	padding: 4px 8px;
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.status-active {
+	background-color: rgba(46, 204, 113, 0.15); /* Light green background */
+	color: var(--success-green);
+}
+
+.status-pending {
+	background-color: rgba(243, 156, 18, 0.15); /* Light orange background */
+	color: #f39c12; 
+}
+
+
+/* ================== Responsive Adjustments (Max-width 768px) ================== */
+
+@media (max-width: 768px) {
+	/* Make container full-width on mobile/tablet */
+	.service-container {
+		padding: 20px 15px; 
+		margin: 0; /* Remove top/bottom margin */
+		width: 100%; /* Take full width */
+		border-radius: 0;
+		box-shadow: none; 
+	}
+	
+	.service-header {
+		flex-direction: column; 
+		align-items: flex-start;
+		padding-bottom: 15px;
+	}
+
+	.service-header-content {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		align-items: center;
+		margin-bottom: 15px;
+	}
+
+	.service-header h2 {
+		font-size: 24px;
+	}
+	
+	/* Button alignment change on mobile */
+	.add-service-btn {
+		padding: 10px 16px; 
+		font-size: 14px;
+		box-shadow: 0 4px 10px rgba(74, 92, 244, 0.2);
+	}
+	
+	/* Total services count moves to the top */
+	.total-services {
+		width: auto; 
+		margin-top: 0;
+		text-align: right; 
+		font-size: 14px;
+		color: var(--dark-grey); 
+		margin-left: 0; /* Reset margin */
+		padding: 5px 10px;
+	}
+	
+	.search-section {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 10px; 
+	}
+
+	.search-section input,
+	.search-btn {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.service-tabs {
+		gap: 20px;
+		/* Allow tabs to scroll horizontally if needed */
+	}
+	.tab-item {
+		font-size: 14px;
+	}
+	
+	.service-table-wrapper {
+		border-radius: 8px;
+	}
+}
+
+@media (max-width: 480px) {
+	.service-header h2 {
+		font-size: 20px;
+	}
+	
+	.add-service-btn {
+		padding: 8px 12px;
+		font-size: 12px;
+	}
+	.service-tabs {
+		gap: 15px;
+	}
+}

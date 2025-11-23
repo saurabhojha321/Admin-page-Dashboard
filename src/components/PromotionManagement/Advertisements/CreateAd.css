@@ -1,0 +1,259 @@
+.create-ad-container {
+    padding: 30px; /* Top, Right, Bottom, Left mein 30px padding */
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Bar for Back button and Settings */
+.ad-header-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+
+.back-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.settings-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #777;
+}
+
+/* Page Title and Subtitle */
+.page-title {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #888;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+.tab.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    font-weight: 600;
+}
+
+/* Form and Preview Wrapper (Main Layout) */
+.form-preview-wrapper {
+    display: flex;
+    gap: 30px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex-grow: 1; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Left Form Section */
+.ad-form {
+    flex: 2; /* Takes 2/3rd space */
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+    background-color: #fcfcfc;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.form-input.textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* File Upload */
+.file-upload {
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Right Preview Section */
+.ad-preview {
+    flex: 1; /* Takes 1/3rd space */
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.ad-preview h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.preview-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Form Actions (RESET/SUBMIT) - placed at the bottom right, aligned with the form column */
+.form-actions-bottom {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the far right */
+    gap: 15px;
+    padding: 20px 0 0 0; /* REMOVED right padding here */
+    
+    /* Calculate the width of the form column relative to the container, including the left padding of the container (30px) */
+    width: calc(66.666% - 15px); /* Approx 2/3rd width minus half the gap (adjust based on form/preview ratio) */
+    margin-left: 30px; /* ADDED: This aligns the buttons to the left edge of the form content (equal to .create-ad-container padding-left) */
+    margin-right: 30px; /* ADDED: This ensures the actions block doesn't go beyond the right edge padding of the container */
+    box-sizing: border-box;
+    align-self: flex-start; /* Ensures the element starts from the left edge */
+}
+
+/*
+   A more robust way to align .form-actions-bottom:
+   1. Wrap the entire form and its buttons in a div with max-width/width 100%.
+   2. OR, if the buttons are *outside* the form-preview-wrapper, treat them as a separate row:
+*/
+/* Alternative (if the above margin/width calculation is complex): */
+/* If you want the buttons to span the full width of the container: */
+/*
+.form-actions-bottom {
+    width: 100%;
+    padding: 20px 30px; 
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+*/
+
+
+.reset-btn,
+.submit-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 100px;
+}
+
+.reset-btn {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .form-preview-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .ad-preview {
+        max-width: 100%;
+    }
+    /* Buttons are centered when layout switches to column */
+    .form-actions-bottom {
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0; /* Removing fixed margins */
+        width: 100%;
+        padding: 20px 15px 0 15px; /* Adjust padding for smaller screens */
+        align-self: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .create-ad-container {
+        padding: 15px;
+    }
+    .form-actions-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+    .reset-btn, .submit-btn {
+        width: 80%;
+        max-width: 250px;
+    }
+}

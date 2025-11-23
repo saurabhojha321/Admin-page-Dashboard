@@ -1,0 +1,272 @@
+/* =====================================
+   GALLERY PAGE - MODERN CLEAN DESIGN
+   (Improved Responsiveness)
+   ===================================== */
+
+/* Main Container - आपकी max-width: 1600px यहाँ सुरक्षित है */
+.gallery-container {
+  padding: 24px 40px;
+  font-family: "Inter", sans-serif;
+  color: #1e293b;
+  background: #f8fafc;
+  min-height: 100vh;
+  box-sizing: border-box;
+  max-width: 1600px; /* <<--- यह लाइन बदली नहीं गई है */
+  margin: 0 auto;
+  
+}
+
+/* Header */
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.gallery-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.gallery-actions button {
+  margin-left: 10px;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.gallery-actions .download-btn {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.gallery-actions .add-btn {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.gallery-actions .add-btn:hover {
+  background: #4338ca;
+}
+
+/* Tabs */
+.gallery-tabs {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.gallery-tabs button {
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 0 4px 10px;
+  margin-right: 20px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  color: #475569;
+}
+
+.gallery-tabs .active-tab {
+  border-bottom: 3px solid #4f46e5;
+  color: #4f46e5;
+}
+
+/* Folder Section */
+.folder-section {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.folder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.folder-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.folder-count {
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 13px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  margin-left: 8px;
+}
+
+.back-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #4338ca;
+}
+
+/* ======== CLEAN BORDERLESS FOLDER UI ======== */
+.folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+.folder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease-in-out;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.folder-card:hover {
+  transform: translateY(-4px);
+}
+
+.folder-icon {
+  font-size: 60px;
+  color: #facc15;
+  transition: color 0.2s ease-in-out;
+}
+
+.folder-card:hover .folder-icon {
+  color: #eab308;
+}
+
+.folder-name {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 120px;
+  transition: color 0.2s ease-in-out;
+}
+
+.folder-card:hover .folder-name {
+  color: #1e293b;
+}
+
+.folder-card::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #4f46e5;
+  margin-top: 6px;
+  transition: width 0.3s ease;
+}
+
+.folder-card:hover::after {
+  width: 40%;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN (सुधार के साथ)
+   ===================================== */
+@media (max-width: 1024px) {
+  .gallery-container {
+    padding: 24px;
+  }
+  .folder-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 20px;
+  }
+
+  .gallery-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .gallery-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .gallery-header h1 {
+    font-size: 24px;
+  }
+
+  .folder-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 16px;
+  }
+  
+  .folder-icon {
+    font-size: 55px;
+  }
+
+  .folder-name {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container {
+    padding: 16px;
+  }
+
+  .gallery-header h1 {
+    font-size: 22px;
+  }
+
+  .gallery-actions button {
+    padding: 9px 15px;
+    font-size: 14px;
+  }
+  
+  .gallery-tabs button {
+      font-size: 14px;
+      margin-right: 15px;
+  }
+
+  .folder-grid {
+    grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+    gap: 12px;
+  }
+
+  .folder-icon {
+    font-size: 50px;
+  }
+
+  .folder-name {
+    font-size: 12px;
+    max-width: 90px;
+  }
+}

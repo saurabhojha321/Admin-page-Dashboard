@@ -1,12 +1,48 @@
-# React + Vite
+# Admin Panel Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional and responsive Admin Panel Dashboard built using **React.js (Frontend)** and **Django (Backend)**.  
+This project includes complete management modules, clean UI design, and CRUD operations connected through REST APIs.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Dashboard Overview** with widgets and quick stats  
+- **Promotion Management**  
+- **Service Management**  
+- **System Management**  
+- **Gallery Management** with image uploads  
+- **Category Setup**  
+- **Authentication & Protected Routes**  
+- Fully **Responsive UI** using CSS + Bootstrap  
+- **Reusable React Components** (Sidebar, Topbar, Cards, Forms)  
+- **REST API Integration** with Django  
+- **SQLite Database** for backend storage  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+### **Frontend**
+- React.js  
+- JavaScript (ES6+)  
+- HTML5  
+- CSS3  
+- Bootstrap  
+- React Hooks (useState, useEffect)  
+- Component-Based Architecture  
+
+### **Backend**
+- Django  
+- Django REST Framework  
+- SQLite Database  
+
+### **Tools**
+- VS Code  
+- Git & GitHub  
+- NPM  
+- Python  
+
+---
+
+##  Project Structure (Frontend)
